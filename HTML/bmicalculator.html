@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: #f1f1f1;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container
+        {
+            background-color: #fff;
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container h1
+        {
+            height: 40px;
+            width: 95%;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 20px 0px;
+            background-color:#c75218;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+        }
+       .container .weight
+       {
+            width: 95%;
+            display: flex;
+            align-items: center;
+            margin: 20px 0px;
+       }
+       .container .weight input
+       {
+            height: 25px;
+            width: 60%;
+            border: 1px solid #c75218;
+            outline: none;
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+            padding-left: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+       }
+       .container .weight select
+       {
+              height: 29px;
+              width: 30%;
+              box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+              border: 1px solid #c75218;
+              outline: none;
+              border-radius: 5px;
+              font-size: 1rem;
+              font-weight: 500;
+              margin-left: 5px;
+              margin-right: 5px;
+              padding: 1px 5px;
+       }
+       .container .height
+       {
+            width: 95%;
+            display: flex;
+            align-items: center;
+            margin: 20px 0px;
+       }
+       .container .height input
+       {
+            height: 25px;
+            width: 60%;
+            border: 1px solid #c75218;
+            outline: none;
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+            padding-left: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+       }
+       .container .height select
+       {
+              height: 29px;
+              width: 30%;
+              box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+              border: 1px solid #c75218;
+              outline: none;
+              border-radius: 5px;
+              font-size: 1rem;
+              font-weight: 500;
+              margin-left: 5px;
+              margin-right: 5px;
+              padding: 1px 5px;
+       }
+       .container .buttons
+       {
+            width: 95%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0px;
+       }
+       .container .buttons input
+       {
+            height: 30px;
+            width: 45%;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            background-color: #c75218;
+            cursor: pointer;
+       }
+       .container .buttons input:hover
+       {
+            background-color: forestgreen ;
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+       }
+       .container .outputbox
+       {
+            width: 95%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0px;
+            resize: none;
+       }
+       .container .outputbox textarea{
+            height: 30px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bolder;
+            color: #000;
+            background-color: rgba(0,0,0,0.1);
+            resize: none;
+            text-align: center;
+            padding: 10px;
+       }
+       .container .outputbox textarea:focus
+       {
+            background-color: rgba(0,0,0,0.2);
+       }
+       .container .resultbox
+       {
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+       }
+       .container .resultbox h3
+       {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #c75218;
+       }
+       .container .resultbox textarea
+       {
+            margin-top: -15px;
+            height: 30px;
+            width: 90%;
+            outline: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bolder;
+            color: black;
+            background-color: rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 10px;
+       }
+       .container .resultbox textarea:focus
+       {
+            background-color: rgba(0,0,0,0.2);
+       }
+
+    </style>
+</head>
+<body>
+   <form class="container">
+    <h1 class="heading">Body Mass Index (BMI) Caluculator</h1>
+
+    <div class="weight">
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight">
+        <select>
+            <option id="pounds">kilogram</option>
+        </select>
+    </div>
+    <div class="height">
+        <label for="height">Height:</label>
+        <input type="number" id="height">
+        <select>
+            <option id="inches">meter</option>
+        </select>
+    </div>
+    <div class="buttons">
+          <input type="reset" value="Clear" id="Clear">
+          <input type="button" value="Calculate"  id="submit" onclick="calc()">
+    </div>
+    <div class="outputbox">
+        <textarea width="120px" Placeholder="Answer" id="output"></textarea>
+    </div>
+    <div class="resultbox">
+        <h3>Share this Calculation <a>help</a></h3>
+        <textarea width="120px" id="result" Placeholder="Do a calculation then copy the link from here"></textarea>
+    </div>
+</form>
+<script type="text/javascript">
+    function calc()
+    {
+     let weight = document.getElementById('weight').value;
+     let height = document.getElementById('height').value;
+     let output = document.getElementById('output');
+     let bmi=Math.round(weight/Math.pow(height,2));
+     var result =document.getElementById('result');
+     var text="";
+     if(height!=""&&weight!="")
+     {
+          if(bmi!="NaN" && bmi!=0)
+          {
+               if(bmi%1!=0)
+               {
+                    output.innerHTML =bmi;
+               }
+               else
+               {
+                    output.innerHTML = bmi + ".0";
+               }
+               if (10 <= bmi && bmi < 14) {
+                text = "You are seriously underweight!";
+            } else if (15 <= bmi && bmi < 18.5) {
+                text = "You are slightly underweight.";
+            } else if (18.5 <= bmi && bmi < 25) {
+                text = "You are healthy!";
+            } else if (25 <= bmi && bmi < 30) {
+                text = "You are slightly overweight.";
+            } else if (30 <= bmi && bmi < 40) {
+                text = "You are obese!";
+            } else if (40 <= bmi && bmi < 50) {
+                text = "You are seriously obese!";
+            } else {
+                text = "You should be dead...";
+
+            }
+               result.innerHTML=text;
+          }
+     }
+    }
+   </script>
+</body>
+</html>
